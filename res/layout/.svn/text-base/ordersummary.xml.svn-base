@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent" android:orientation="vertical">
+    <LinearLayout 
+    	android:id="@+id/linearLayout7" 
+    	android:orientation="horizontal" 
+    	android:paddingBottom="5dip" 
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent">
+    	<ImageView
+    		android:id="@+id/ordersummaryHomeIcon"
+    		android:src="@drawable/home"
+    		android:paddingTop="4dip"
+    		android:paddingLeft="5dip"
+    		android:paddingRight="15dip"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+        <TextView 
+        	android:text="Select Restaurant -&gt; Order From Menu -&gt; Confirm Delivery Offer -&gt; " 
+        	android:layout_height="wrap_content" 
+        	android:layout_width="wrap_content" 
+        	android:textSize="18px"
+        	android:id="@+id/summary_breadcrumb1"></TextView>
+        <TextView 
+        	android:text=" Order Summary" 
+        	android:textStyle="bold" 
+        	android:textColor="#23cf34" 
+        	android:textSize="18px"
+        	android:layout_height="wrap_content" 
+        	android:layout_width="wrap_content" 
+        	android:id="@+id/summary_breadcrumb2"></TextView>
+    </LinearLayout>
+    <View 
+ 		android:background="#000" 
+ 		android:layout_width = "fill_parent"
+ 		android:layout_height="1dip"
+ 		android:layout_centerVertical ="true"
+ 		android:layout_alignParentTop="true"/>
+ 	<RelativeLayout
+ 		android:layout_width="fill_parent"
+ 		android:layout_height="wrap_content"
+ 		android:paddingTop="10dip">
+ 		<TextView
+			android:id="@+id/dsTextView01"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="24px"
+			android:padding="5dip"
+			android:background="#9AFF9A"
+			android:layout_centerHorizontal="true"
+    		android:text="Deliver this order now!"/>
+    	<LinearLayout 
+	    	android:orientation="horizontal" 
+	    	android:id="@+id/linearLayout2" 
+	    	android:layout_below="@id/dsTextView01"
+	    	android:layout_centerHorizontal="true"
+	    	android:layout_height="wrap_content" 
+	    	android:layout_width="wrap_content">
+	        <TextView 
+	        	android:text="Order placed "
+	        	android:textSize="20px" 
+	        	android:id="@+id/textView2" 
+	        	android:layout_height="wrap_content" 
+	        	android:layout_width="wrap_content"/>
+	        <Chronometer 
+	        	android:text="Chronometer" 
+	        	android:textSize="22px"
+	        	android:layout_height="wrap_content" 
+	        	android:layout_width="wrap_content" 
+	        	android:id="@+id/ordersummary_chronometer"/>
+	        <TextView 
+	        	android:text=" minutes ago" 
+	        	android:textSize="20px"
+	        	android:id="@+id/textView3" 
+	        	android:layout_height="wrap_content" 
+	        	android:layout_width="wrap_content"/>
+	    </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout 
+    	android:id="@+id/linearLayout1" 
+    	android:orientation="horizontal" 
+    	android:layout_weight="3" 
+    	android:padding="10dip"
+    	android:layout_height="wrap_content" 
+    	android:layout_width="fill_parent">
+        <LinearLayout 
+        	android:id="@+id/linearLayout3" 
+        	android:orientation="vertical" 
+        	android:layout_weight="1" 
+        	android:layout_height="wrap_content" 
+        	android:layout_width="wrap_content">
+            <TextView 
+            	android:text="Delivery User Summary" 
+            	android:textSize="18px"
+            	android:textStyle="bold"
+            	android:id="@+id/UserSummaryTitle" 
+            	android:layout_height="wrap_content" 
+            	android:layout_width="wrap_content"/>
+            <TextView 
+            	android:text="Default" 
+            	android:layout_height="wrap_content" 
+            	android:layout_width="wrap_content" 
+            	android:id="@+id/ordersummary_userinfo"/>
+        </LinearLayout>
+        <LinearLayout 
+        	android:id="@+id/linearLayout4" 
+        	android:orientation="vertical" 
+        	android:layout_weight="1" 
+        	android:layout_height="wrap_content" 
+        	android:layout_width="wrap_content">
+            <TextView 
+            	android:text="Order Summary" 
+            	android:id="@+id/textView5" 
+            	android:textSize="18px"
+            	android:textStyle="bold"
+            	android:layout_height="wrap_content" 
+            	android:layout_width="wrap_content"></TextView>
+            <TextView 
+            	android:text="Default" 
+            	android:textSize="20dip"
+            	android:layout_height="wrap_content" 
+            	android:layout_width="wrap_content" 
+            	android:id="@+id/ordersummary_restaurant"></TextView>
+            <LinearLayout 
+            	android:id="@+id/ordersummary_orderitemlayout" 
+            	android:orientation="horizontal" 
+            	android:paddingLeft="15px"
+            	android:layout_weight="1" 
+            	android:layout_height="wrap_content" 
+            	android:layout_width="fill_parent">
+                <TextView 
+                	android:text="Default" 
+                	android:layout_weight="9" 
+                	android:layout_height="wrap_content" 
+                	android:layout_width="wrap_content" 
+                	android:id="@+id/ordersummary_items"></TextView>
+                <TextView 
+                	android:text="0.00" 
+                	android:layout_weight="1" 
+                	android:layout_height="wrap_content" 
+                	android:layout_width="wrap_content" 
+                	android:id="@+id/ordersummary_itemprices" 
+                	android:gravity="right"></TextView>
+            </LinearLayout>
+            <View android:id="@+id/ordersummary_separator" 
+            	android:paddingLeft="15px"
+ 				android:background="#000" 
+ 				android:layout_width = "fill_parent"
+ 				android:layout_height="1dip"
+ 				android:layout_centerVertical ="true"
+ 				android:layout_alignParentTop="true"/>
+			<LinearLayout 
+				android:paddingLeft="15px"
+				android:id="@+id/ordersummary_ordercostlayout" 
+				android:orientation="horizontal" 
+				android:layout_weight="1" 
+				android:layout_height="wrap_content" 
+				android:layout_width="fill_parent">
+                <TextView 
+                	android:text="Total (incl tax+delivery): " 
+                	android:textStyle="bold"
+                	android:textSize="18px"
+                	android:id="@+id/textView6" 
+                	android:layout_weight="9" 
+                	android:layout_height="wrap_content" 
+                	android:layout_width="wrap_content"/>
+                <TextView 
+                	android:text="0.00" 
+                	android:textStyle="bold"
+                	android:textSize="18px"
+                	android:layout_weight="1" 
+                	android:layout_height="wrap_content" 
+                	android:layout_width="wrap_content" 
+                	android:id="@+id/ordersummary_total" 
+                	android:gravity="right"/>
+            </LinearLayout>
+            <TextView
+            	android:id="@+id/ordersummary_customorder"
+            	android:layout_width="fill_parent"
+            	android:layout_height="100dip"
+            	android:textSize="18dip"
+            	android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+    
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+	    <Button 
+	    	android:text="I Received My Order" 
+	    	android:id="@+id/ordersummary_button_received" 
+	    	android:layout_centerHorizontal="true"
+	    	android:layout_width="wrap_content" 
+	    	android:layout_height="wrap_content"/>
+    </RelativeLayout>
+  
+</LinearLayout>

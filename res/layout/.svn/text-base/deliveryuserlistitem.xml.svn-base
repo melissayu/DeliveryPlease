@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:orientation="vertical" 
+	android:padding="2dip">
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+	
+	<LinearLayout
+		android:layout_width="100dp"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView 
+			android:id="@+id/Username" 
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Username"
+			android:textSize="20px" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="65dp"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+ 		<RatingBar 
+ 			android:id="@+id/ratingbar"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:numStars="5"
+        	android:stepSize="0.5"
+        	style="?android:attr/ratingBarStyleSmall" 
+        	android:isIndicator="false"
+        	android:clickable="false" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="75dp"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+        <TextView
+        	android:id="@+id/TimesRated"
+        	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0 "
+			android:textSize="20px" />
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+			<TextView
+        		android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="users"
+				android:textSize="10px" />
+			<TextView
+        		android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="rated"
+				android:textSize="10px" />
+		</LinearLayout>	
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="75dp"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+        <TextView
+        	android:id="@+id/Distance"
+        	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="0.0 mi"
+			android:textSize="20px"
+			android:padding="1dip" />
+	</LinearLayout>
+	<LinearLayout
+		android:layout_width="75dp"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+		<TextView
+			android:id="@+id/OrderCost"
+        	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="$0.00"
+			android:textSize="20px" />			
+	</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

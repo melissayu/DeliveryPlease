@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TextView
+    	android:layout_height="wrap_content"
+    	android:textSize="72px" 
+    	android:id="@+id/textView1" 
+    	android:text="DeliveryPlease"
+    	android:paddingTop="20dip"
+    	android:gravity="center|center" 
+    	android:layout_width="fill_parent"/>
+    <RelativeLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingTop="20dip">
+	    <EditText
+	    	android:id="@+id/login_username"
+	    	android:layout_centerHorizontal="true"
+	    	android:layout_width="200dip"
+	    	android:layout_height="wrap_content"
+	    	android:maxLength="18"
+	    	android:hint="Username"/>
+	    <EditText
+	    	android:layout_centerHorizontal="true"	    
+	    	android:id="@+id/login_password"
+	    	android:layout_below="@id/login_username"
+	    	android:layout_width="200dip"
+	    	android:layout_height="wrap_content"
+	    	android:maxLength="18"
+	    	android:password="true"
+	    	android:hint="Password"/>
+	    <Button
+	    	android:id="@+id/login_loginBtn"
+	    	android:layout_width="200dip"
+	    	android:layout_height="wrap_content"
+	    	android:text="Login"
+	    	android:layout_below="@id/login_password"
+			android:layout_centerHorizontal="true"/>	    	
+	     
+	</RelativeLayout>
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<Button
+	    	android:id="@+id/login_signupBtn"
+	    	android:paddingBottom="15dip"
+	    	android:background="@android:color/transparent"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"	
+			android:layout_centerHorizontal="true"
+	    	android:text="New user? Sign up now!"/>
+	</RelativeLayout>
+</LinearLayout>

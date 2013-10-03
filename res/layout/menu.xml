@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingTop="2dip"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingBottom="5dip">
+    	<ImageView
+    		android:id="@+id/menuHomeIcon"
+    		android:src="@drawable/home"
+    		android:paddingTop="4dip"
+    		android:paddingLeft="5dip"
+    		android:paddingRight="15dip"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    	<TextView
+    		android:text="Select Restaurant -> "
+    		android:textSize="18px"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    	<TextView
+    		android:text="Order From Menu"
+    		android:textSize="18px"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:textColor="#23cf34"
+    		android:textStyle="bold"/>
+    	<TextView
+    		android:textSize="18px"
+    		android:text=" -> Confirm Delivery Offer -> Order Summary"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+    	android:id="@+id/separator" 
+ 		android:background="#000" 
+ 		android:layout_width = "fill_parent"
+ 		android:layout_height="1dip"
+ 		android:layout_centerVertical ="true"
+ 		android:layout_alignParentTop="true"/>
+    <LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent">
+	    <LinearLayout 
+	    	android:layout_weight="2" 
+	    	android:id="@+id/LinearLayout01" 
+	    	android:orientation="vertical" 
+	    	android:padding="5dip"
+	    	android:layout_height="fill_parent" 
+	    	android:layout_width="fill_parent">
+	    	<TextView 
+	    		android:text="Thai Basil Menu:" 
+	    		android:id="@+id/TextView01" 
+	    		android:textSize="30px" 
+	    		android:layout_height="wrap_content" 
+	    		android:layout_width="fill_parent"></TextView>
+<TextView 
+	android:text="(Tap on any item to add it to your order)" 
+	android:background="#CAE1FF"
+	android:id="@+id/TextView02" 
+	android:textSize="14px" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent"></TextView>
+<LinearLayout 
+	android:orientation="horizontal" 
+	android:id="@+id/LinearLayout02" 
+	android:layout_height="wrap_content" 
+	android:layout_width="fill_parent">
+	<Button 
+		android:id="@+id/menuTabButton1" 
+		android:text="Appetizers" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"></Button>
+	<Button 
+		android:id="@+id/menuTabButton2" 
+		android:text="Curries" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"></Button>
+	<Button 
+		android:id="@+id/menuTabButton3" 
+		android:text="House Specials" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"></Button>
+	<Button 
+		android:id="@+id/menuTabButton4" 
+		android:text="Beverages" 
+		android:layout_height="wrap_content" 
+		android:layout_width="wrap_content"></Button>
+</LinearLayout>
+<ListView 
+	android:id="@+id/menuList" 
+	android:layout_height="wrap_content" 
+	android:layout_width="wrap_content">
+</ListView>
+</LinearLayout>
+	    <View android:id="@+id/separator" 
+	 			android:background="#473C8B" 
+	 			android:layout_width = "1dip"
+	 			android:layout_height="fill_parent"
+	 			android:layout_centerVertical ="true"
+	 			android:layout_alignParentTop="true"/>
+	    <LinearLayout android:layout_weight="3" 
+	       	android:orientation="vertical"
+	    	android:layout_height="fill_parent" 
+	    	android:layout_width="fill_parent"
+	    	android:paddingLeft="5dip"
+	    	android:paddingTop="5dip">
+	    	<TextView  
+	    		android:layout_width="fill_parent" 
+	    		android:layout_height="wrap_content" 
+	    		android:textSize="30px" 
+	    		android:text="Your Current Order:"/>
+	    	<TextView  
+	    		android:layout_width="fill_parent" 
+	    		android:layout_height="wrap_content" 
+	    		android:textSize="14px" 
+	    		android:background="#FFFACD"
+	    		android:text="(Tap on any item to remove it from your order)"/>
+	    	<ListView android:id="@+id/menuOrderList"
+	   			android:divider="#000"
+	   			android:layout_weight="3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" />
+			<View android:id="@+id/separator" 
+	 			android:background="#473C8B" 
+	 			android:layout_width = "fill_parent"
+	 			android:layout_height="1dip"
+	 			android:layout_centerVertical ="true"
+	 			android:layout_alignParentTop="true"/>
+	 		<LinearLayout android:orientation="horizontal"
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="wrap_content">
+	 			<TextView  
+	    			android:layout_width="wrap_content" 
+	    			android:layout_height="wrap_content" 
+	    			android:text="Subtotal:  " />
+	    		<TextView 
+	    			android:id="@+id/menu_subtotal_text"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:text="0"/>
+	    	</LinearLayout>
+	    	<LinearLayout android:orientation="horizontal"
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="wrap_content">
+	    		<TextView  
+	    			android:layout_width="wrap_content" 
+	    			android:layout_height="wrap_content" 
+	    			android:text="Tax:  "/>
+	    		<TextView android:id="@+id/menu_tax_text"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:text="0"/>
+	    	</LinearLayout>
+	    	<LinearLayout android:orientation="horizontal"
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="wrap_content">
+	    		<TextView  
+	    			android:layout_width="wrap_content" 
+	    			android:layout_height="wrap_content" 
+	    			android:textSize="16px"
+	    			android:textStyle="bold"
+	    			android:text="Order Total:  "/>
+	    		<TextView android:id="@+id/menu_total_text"
+	    			android:layout_width="wrap_content"
+	    			android:layout_height="wrap_content"
+	    			android:textStyle="bold"
+	    			android:textSize="16px"
+	    			android:text="0"/>
+	    	</LinearLayout>
+	    	<LinearLayout android:orientation="horizontal"
+	 			android:layout_width="fill_parent"
+	 			android:layout_height="wrap_content">
+				<Button android:id="@+id/menuOrderButton"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content" 
+					android:gravity="center"
+					android:text="Request this order"
+					android:enabled="false"/>
+			</LinearLayout>
+    	</LinearLayout>
+	
+</LinearLayout>
+</LinearLayout>

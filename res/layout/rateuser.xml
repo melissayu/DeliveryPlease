@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  	<RelativeLayout
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  		android:padding="10dip">
+		<TextView
+			android:id="@+id/rateuser_text"
+			android:layout_centerHorizontal="true"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textSize="20dip"
+			android:text="Please rate your interaction with user"/>
+		<RatingBar android:id="@+id/ratingbar"
+			android:layout_centerHorizontal="true"
+			android:paddingTop="10dip"
+			android:paddingBottom="10dip"
+			android:layout_below="@id/rateuser_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:numStars="5"
+	        android:stepSize="1.0"/>
+   
+    	<Button
+    		android:id="@+id/rateuser_cancelBtn"
+    		android:padding="10dip"
+    		android:background="@android:color/transparent"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_below="@id/ratingbar"
+    		android:layout_alignLeft="@id/ratingbar"
+    		android:text="No thanks"/>
+    	<Button
+    		android:id="@+id/rateuser_doneBtn"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_below="@id/ratingbar"
+    		android:layout_alignRight="@id/rateuser_text"
+    		android:textSize="18dip"
+    		android:text="Done"/>	
+    </RelativeLayout>
+</LinearLayout>

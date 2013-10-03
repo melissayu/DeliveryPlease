@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+  <TextView
+    	android:layout_height="wrap_content"
+    	android:textSize="72px" 
+    	android:id="@+id/textView1" 
+    	android:text="DeliveryPlease"
+    	android:paddingTop="20dip"
+    	android:gravity="center|center" 
+    	android:layout_width="fill_parent"/>
+    <RelativeLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingTop="20dip">
+	    <EditText
+	    	android:id="@+id/register_username"
+	    	android:layout_centerHorizontal="true"
+	    	android:layout_width="220dip"
+	    	android:layout_height="wrap_content"
+	    	android:maxLength="18"
+	    	android:hint="Choose a username"/>
+	    <EditText
+	    	android:id="@+id/register_email"
+	    	android:layout_below="@id/register_username"
+	    	android:layout_centerHorizontal="true"
+	    	android:layout_width="220dip"
+	    	android:layout_height="wrap_content"
+	    	android:maxLength="18"
+	    	android:hint="Email address"/>
+	    <EditText
+	    	android:layout_centerHorizontal="true"	    
+	    	android:id="@+id/register_password"
+	    	android:layout_below="@id/register_email"
+	    	android:layout_width="220dip"
+	    	android:layout_height="wrap_content"
+	    	android:password="true"
+	    	android:maxLines="1"
+	    	android:hint="Choose a password"/>
+	   
+	    <Button
+	    	android:id="@+id/register_registerBtn"
+	    	android:layout_width="220dip"
+	    	android:layout_height="wrap_content"
+	    	android:text="Register!"
+	    	android:layout_below="@id/register_password"
+			android:layout_centerHorizontal="true"/>	    	
+	     
+	</RelativeLayout>
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<Button
+	    	android:id="@+id/register_cancelBtn"
+	    	android:background="@android:color/transparent"
+	    	android:paddingBottom="15dip"
+	    	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"	
+			android:layout_centerHorizontal="true"
+	    	android:text="Cancel"/>
+	</RelativeLayout>
+</LinearLayout>

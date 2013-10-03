@@ -1,0 +1,14 @@
+<resources>
+	<style name="dpTheme" parent="android:Theme.Light">
+		<item name="android:listViewStyle">@style/dpListView</item>
+	</style>
+
+	<style name="dpListView" parent="@android:style/Widget.ListView">
+	
+	</style>
+	
+	<style name="dpTextAppearance" parent="@android:style/TextAppearance">
+		<item name="android:textSize">12sp</item>
+		<item name="android:textColor">#3D59AB</item>
+	</style>
+</resources>

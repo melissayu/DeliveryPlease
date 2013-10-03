@@ -1,0 +1,203 @@
+package edu.berkeley.cs160.rarererror.proj;
+
+import java.text.DecimalFormat;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnKeyListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class DeliveryRequestDetails extends Activity{
+	private ImageView homeIcon;
+	private AlertDialog.Builder builder;
+	private AlertDialog alert;
+	
+    private String user;
+    private ImageView userPic;
+    private TextView userInfo;
+    private TextView userInfoLoc;
+    private TextView restaurant;
+    private TextView orderInfo;
+    private TextView orderCosts;
+    private TextView subtotal;
+    private TextView tax;
+    private TextView total;
+    private EditText chargeField;
+    private EditText ETAField;
+    private Button yesButton;
+    private Button noButton;
+    
+    private int ETA;
+    private OrderObject testorder;
+    private UserObject fakeUser;
+	
+	/** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.requestdetails);
+        
+        Bundle b = this.getIntent().getExtras();
+        user = b.getString("User Name");
+        userPic = (ImageView) findViewById(R.id.UserPic);
+        userInfo = (TextView) findViewById(R.id.UserInfo);
+        userInfoLoc = (TextView) findViewById(R.id.UserInfoLoc);
+        restaurant = (TextView) findViewById(R.id.Restaurant);
+        orderInfo = (TextView) findViewById(R.id.Items);
+        orderCosts = (TextView) findViewById(R.id.ItemPrices);
+        subtotal = (TextView) findViewById(R.id.subtotal);
+        tax = (TextView) findViewById(R.id.tax);
+        total = (TextView) findViewById(R.id.total);
+        chargeField = (EditText) findViewById(R.id.ChargeField);
+        ETAField = (EditText) findViewById(R.id.ETAField);
+        yesButton = (Button) findViewById(R.id.YesButton);
+        noButton = (Button) findViewById(R.id.NoButton);
+        ETA = -1;
+        
+        // Determine what shows up on page by the username
+        // Enter a line of code to obtain database entry, it should return both the user info and the user's order
+        	//********************
+        	// The entry should contain the user info and the order requested
+
+        // create a fake user
+        fakeUser = new UserObject();
+        fakeUser.setUsername(user);
+        fakeUser.setAddress("Unit 1, 2650 Durant Ave\nBerkeley, CA 94720");
+        
+        // create a fake/testing order
+        String restName="Restaurant";
+        testorder = new OrderObject(restName);
+        MenuItem item1 = new MenuItem("1 Pineapple Fried Rice", 8.50, 1);
+        MenuItem item2 = new MenuItem("1 Sprite", 1.75, 1);
+        testorder.add(item1);
+        testorder.add(item2);
+        testorder.updatePrice();
+        
+        // Set user information according to database entry
+        // String usersummary = user + "\nAddress:\nUnit 1, 2650 Durant Ave\nBerkeley, CA 94720";
+        userInfo.setText(user);
+        userInfoLoc.setText(fakeUser.getAddress());
+        // Set restaurant to restaurant name, obtained from database entry 
+        restaurant.setText("Thai Basil");
+
+        // Set order to 
+        orderInfo.setText(testorder.itemList());
+        orderCosts.setText(testorder.itemPricesList());
+
+        // Calculate subtotal
+        //subtotal.setText(testorder.subtotalPriceText);
+        
+        // Calculate tax
+        //tax.setText(testorder.taxPriceText);
+        
+        // Calculate total
+        total.setText(testorder.totalPriceText);
+                
+        chargeField.setOnKeyListener(new OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // Check if a delivery charge is entered
+                if (chargeField.getText().toString().matches("^\\d+\\.\\d{2}$") ||
+                	chargeField.getText().toString().matches("^\\d+\\.\\d{1}$") ||
+                	chargeField.getText().toString().matches("^\\d+$")) {
+                	yesButton.setEnabled(true);
+                	testorder.deliveryPrice = Double.valueOf(chargeField.getText().toString());
+                	testorder.updateTotalWithDelivery();
+                	
+                } else {
+                	yesButton.setEnabled(false);
+                }
+                
+                return false;
+            }
+        });
+        
+        ETAField.setOnKeyListener(new OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // Grab ETA
+                if (ETAField.getText().toString().matches("^\\d+$"))
+                	ETA = Integer.valueOf(ETAField.getText().toString());
+                
+                return false;
+            }
+        });
+        
+        yesButton.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+				WebService webService = new WebService("http://deliveryplease.iriscouch.com/orderoffers/");
+		        JSONObject jsonobj = new JSONObject();
+		        try {
+					jsonobj.put("name", "Nameless User " + 
+							"$" + testorder.deliveryPrice +
+							" " + ETA);
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		        
+		        //Get JSON response from server the "" are where the method name would normally go if needed example
+		        // webService.webGet("getMoreAllerts", params);
+		        String response = webService.webPost(jsonobj);
+				
+				Intent myintent = new Intent(v.getContext(), DeliveryOfferPending.class);
+				myintent.putExtra("user", fakeUser);
+				myintent.putExtra("orderobject", testorder);
+				Bundle b = new Bundle();
+                b.putInt("ETA", ETA);
+                myintent.putExtras(b);
+				startActivity(myintent);
+			}
+        });
+        
+        noButton.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent myintent = new Intent(v.getContext(), DeliveryAvailableRequests.class);
+				startActivity(myintent);
+			}       	
+        });
+        
+        createDialog();
+    	homeIcon = (ImageView) findViewById(R.id.requestdetailsHomeIcon);
+            homeIcon.setOnClickListener(new OnClickListener(){
+            	public void onClick (View v){
+            		alert.show();
+            	}
+            });
+    }
+    
+    public void createDialog(){
+    	builder = new AlertDialog.Builder(this);
+		builder.setMessage("Are you sure you want to cancel this \norder and go back to the main menu?")
+		       .setCancelable(false)
+		       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		        		Intent i = new Intent(DeliveryRequestDetails.this, DeliveryPlease.class);
+		        		startActivity(i);
+
+		           }
+		       })
+		       .setNegativeButton("No", new DialogInterface.OnClickListener() {
+		           public void onClick(DialogInterface dialog, int id) {
+		                dialog.cancel();
+		           }
+		       });
+		alert = builder.create();
+    }
+}

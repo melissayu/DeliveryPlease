@@ -1,0 +1,105 @@
+package edu.berkeley.cs160.rarererror.proj;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+<<<<<<< .mine
+import android.widget.Button;
+import android.widget.Toast;
+=======
+>>>>>>> .r12
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class Menu extends Activity {
+	private ArrayList<MenuItem> menulist;
+	private MenuListAdapter menuAdapter;
+	private ListView menulistview;
+
+	//public ArrayList<MenuItem> currOrderList;
+	private MenuListAdapter orderListAdapter;
+	private ListView currOrderListView;
+	
+	private TextView subtotalTextView;
+	private TextView taxTextView;
+	private TextView totalTextView;
+	private OrderObject order;
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.menu);
+        order = new OrderObject();
+        
+        subtotalTextView = (TextView) findViewById(R.id.menu_subtotal_text);
+        taxTextView = (TextView) findViewById(R.id.menu_tax_text);
+        totalTextView = (TextView) findViewById(R.id.menu_total_text);
+        
+        menulistview = (ListView) findViewById(R.id.menuList);
+        menulist = new ArrayList<MenuItem>();
+        menuAdapter = new MenuListAdapter(this, R.layout.menulistitem, menulist);
+        menulistview.setAdapter(menuAdapter);
+        populateMenu();
+        
+        currOrderListView = (ListView) findViewById(R.id.menuOrderList);
+        orderListAdapter = new MenuListAdapter(this, R.layout.menulistitem, order.orderList);
+        currOrderListView.setAdapter(orderListAdapter);
+        
+        menulistview.setOnItemClickListener(new OnItemClickListener(){
+        	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+        		MenuItem selectedItem = menulist.get(position);
+        		order.orderList.add(selectedItem);
+        		order.subtotalPrice = order.subtotalPrice+selectedItem.itemPrice;
+        		order.updatePrice();
+        		subtotalTextView.setText(order.subtotalPriceText);
+        		taxTextView.setText(order.taxPriceText);
+        		totalTextView.setText(order.totalPriceText);
+
+        		orderListAdapter.notifyDataSetChanged();
+
+        	}
+        });
+       currOrderListView.setOnItemClickListener(new OnItemClickListener(){
+        	public void onItemClick(AdapterView<?> a, View v, int position, long id) {
+        		MenuItem selectedItem = order.orderList.get(position);
+        		order.subtotalPrice = order.subtotalPrice-selectedItem.itemPrice;
+        		order.updatePrice();
+        		subtotalTextView.setText(order.subtotalPriceText);
+        		taxTextView.setText(order.taxPriceText);
+        		totalTextView.setText(order.totalPriceText);
+
+        		order.orderList.remove(position);
+        		orderListAdapter.notifyDataSetChanged();
+        	}
+        });
+       	Button butt = (Button) findViewById(R.id.menuOrderButton);
+       	butt.setOnClickListener(new OnClickListener(){
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent myintent = new Intent(v.getContext(), OrderConfirmation.class);
+				Bundle b = new Bundle();
+				b.putParcelable(key, value)
+				startActivity(myintent);
+			}
+       		
+       	});
+	}
+	public void populateMenu(){
+		MenuItem item1 = new MenuItem("Pad Thai", 7.50);
+		MenuItem item3 = new MenuItem("White Rice",1.50);
+		MenuItem item2 = new MenuItem("Sprite", 3);
+		menulist.add(item1);
+		menulist.add(item3);
+		menulist.add(item2);
+		
+	}
+	
+}

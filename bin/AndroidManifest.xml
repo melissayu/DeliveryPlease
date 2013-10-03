@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="edu.berkeley.cs160.rarererror.proj"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="4" />
+    
+    <uses-permission
+        android:name="android.permission.INTERNET" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name" android:theme="@style/dpTheme">
+        <activity android:name=".Login" android:label="DeliveryPlease">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="Register"></activity>
+        <activity android:name="CustomOrder"></activity>
+        <activity android:name=".DeliveryPlease"></activity>
+        <activity android:name="CheckInList" android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name="LocationSummary"></activity>
+        <activity android:name="DeliveryAvailableRequests"></activity>
+        <activity android:name="DeliveryRequestDetails"></activity>
+        <activity android:name="DeliveryOfferPending"></activity>
+        <activity android:name="OrderPickRestaurant" android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name="OrderPending"></activity>
+        <activity android:name="OrderSummary"></activity>
+        <activity android:name="DeliverySummary"></activity>
+        <activity android:name="Menu"></activity>
+        <activity android:name="OrderRequest"></activity>
+        <activity android:name="EnterLocation" android:theme="@android:style/Theme.Dialog"></activity>
+        <activity android:name="RateUser" android:theme="@android:style/Theme.Dialog"></activity>
+    </application>
+    
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    
+</manifest>

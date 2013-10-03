@@ -1,0 +1,83 @@
+package edu.berkeley.cs160.rarererror.proj;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class OrderObject implements Parcelable{
+	public ArrayList<MenuItem> orderList;
+	public String[] orderListStringArray;
+
+	public double subtotalPrice;
+	public double taxPrice;
+	public double totalPrice;
+	public double deliveryPrice;
+	public double totalWithDeliveryPrice;
+	
+	public String subtotalPriceText;
+	public String taxPriceText;
+	public String totalPriceText;
+	
+	public OrderObject(){
+		orderList = new ArrayList<MenuItem>();
+		subtotalPrice = 0;
+		taxPrice = 0;
+		totalPrice = 0;
+	}
+	
+	public void add(MenuItem mi){
+		orderList.add(mi);
+		subtotalPrice += mi.itemPrice;
+	}
+	
+	public void updatePrice(){
+		taxPrice = subtotalPrice*0.09;
+		totalPrice = subtotalPrice + taxPrice;
+		formatNumberStrings();
+		
+		orderListStringArray = new String[orderList.size()];
+		for (int i = 0; i < orderList.size(); i++){
+			orderListStringArray[i] = orderList.get(i).itemName;
+		}
+	}
+	
+	public void formatNumberStrings(){
+        NumberFormat numberFormat = DecimalFormat.getInstance();
+        numberFormat.setMaximumFractionDigits(2);
+        subtotalPriceText = numberFormat.format(subtotalPrice);
+        taxPriceText = numberFormat.format(taxPrice);
+        totalPriceText = numberFormat.format(totalPrice);
+
+	}
+	
+	public int describeContents() {
+        return 0;
+    }
+
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeStringArray(orderListStringArray);
+        out.writeDouble(subtotalPrice);
+        out.writeDouble(taxPrice);
+        out.writeDouble(totalPrice);
+    }
+	
+	public static final Parcelable.Creator<OrderObject> CREATOR = new Parcelable.Creator<OrderObject>() {
+        public OrderObject createFromParcel(Parcel in) {
+            return new OrderObject(in);
+        }
+
+        public OrderObject[] newArray(int size) {
+            return new OrderObject[size];
+        }
+    };
+    
+    private OrderObject(Parcel in) {
+    	orderListStringArray = in.createStringArray();
+    	subtotalPrice = in.readDouble();
+    	taxPrice = in.readDouble();
+    	totalPrice = in.readDouble();
+    }
+}

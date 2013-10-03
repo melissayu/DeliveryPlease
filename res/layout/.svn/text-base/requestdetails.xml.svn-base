@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<LinearLayout
+    	android:orientation="horizontal"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingBottom="5dip">
+    	<ImageView
+    		android:id="@+id/requestdetailsHomeIcon"
+    		android:src="@drawable/home"
+    		android:paddingTop="4dip"
+    		android:paddingLeft="5dip"
+    		android:paddingRight="15dip"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    	<TextView
+    		android:text="Check-in -> "
+    		android:textSize="18px"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    	<TextView
+    		android:text="Select Order"
+    		android:textSize="18px"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:textColor="#23cf34"
+    		android:textStyle="bold"/>
+    	<TextView
+    		android:text=" -> Confirm Offer -> Delivery Summary"
+    		android:textSize="18px"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View 
+ 		android:background="#000" 
+ 		android:layout_width = "fill_parent"
+ 		android:layout_height="1dip"
+ 		android:layout_centerVertical ="true"
+ 		android:layout_alignParentTop="true"/>
+ 	<Button
+	    	android:id="@+id/NoButton"
+       		android:text="Back to Orders"
+       		android:layout_width="wrap_content"
+       		android:layout_height="wrap_content"/>
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="3">
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:paddingLeft="30dip">
+			<TextView
+    			android:text="User"
+    			android:textSize="28px"
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<LinearLayout
+    			android:orientation="horizontal"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"
+    			android:padding="5dip">
+    			<ImageView 
+					android:paddingRight="10dip"
+	  				android:id="@+id/UserPic"
+  					android:src="@drawable/oski_logo"
+  					android:layout_width="wrap_content"
+  					android:layout_height="wrap_content"/>
+  				<TextView
+    				android:id="@+id/UserInfo"
+    				android:text="Default"
+    				android:textSize="24px"
+    				android:paddingTop="5dip"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content"/>
+    		</LinearLayout>
+    		<TextView
+    			android:id="@+id/UserInfoLoc"
+    			android:text="Default"
+    			android:textSize="18dip"
+    			android:padding="5dip"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+		</LinearLayout>
+    	<LinearLayout
+  			android:orientation="vertical"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="2"
+			android:paddingRight="20dip">
+  			<TextView
+    			android:text="Ordered"
+    			android:textSize="28px"
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TextView
+    			android:id="@+id/Restaurant"
+    			android:text="Default"
+    			android:textSize="20px"
+    			android:textStyle="bold"
+    			android:layout_width="wrap_content"
+    			android:layout_height="wrap_content"/>
+    		<TableLayout
+    			android:paddingLeft="15dip"
+				android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:padding="20dip"
+				android:layout_weight="1">
+				<TableRow>
+					<TextView
+	    				android:id="@+id/Items"
+    					android:text="Item"
+    					android:textSize="18px"
+    					android:layout_width="wrap_content"
+    					android:layout_height="wrap_content"
+    					android:layout_weight="1"/>
+					<TextView
+	    				android:id="@+id/ItemPrices"
+    					android:text="0.00"
+    					android:textSize="18px"
+    					android:layout_width="wrap_content"
+    					android:layout_height="wrap_content"
+    					android:paddingRight="20dip"
+    					android:gravity="right"
+    					android:layout_weight="1"/>
+    			</TableRow>
+    		</TableLayout>
+    		<View android:id="@+id/separator" 
+	 				android:background="#000" 
+	 				android:layout_width ="fill_parent"
+	 				android:layout_height="1dip"
+	 				android:layout_centerVertical="true"
+	 				android:layout_alignParentTop="true"/>
+    		<TableLayout
+    			android:paddingLeft="10dip"
+				android:orientation="horizontal"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1">
+	            
+				<TableRow>
+					<TextView
+		    			android:text="Order Total (incl tax): "
+		    			android:textSize="18px"
+		    			android:textStyle="bold"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+		    			android:layout_weight="1"/>
+					<TextView
+		    			android:id="@+id/total"
+		    			android:text="0.00"
+		    			android:textSize="18px"
+		    			android:textStyle="bold"
+		    			android:layout_width="wrap_content"
+		    			android:layout_height="wrap_content"
+		    			android:gravity="right"
+		    			android:paddingRight="20dip"
+		    			android:layout_weight="1"/>		
+				</TableRow>		
+			</TableLayout>
+    	</LinearLayout>
+	</LinearLayout>
+	
+	
+			<RelativeLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:paddingLeft="20dip"
+				android:paddingRight="20dip">
+				<TextView
+					android:id="@+id/rd_tv1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_centerHorizontal="true"
+					android:textSize="16dip"
+					android:paddingBottom="10dip"
+					android:text="If you would like to deliver this order, enter your delivery fee and estimated time to deliver:"/>
+			
+			
+				<TextView
+					android:id="@+id/rd_tv2"
+					android:layout_below="@id/rd_tv1"
+					android:layout_alignLeft="@id/rd_tv1"
+					android:text="Delivery charge: "
+       				android:layout_width="wrap_content"
+       				android:layout_height="wrap_content"
+       				android:layout_weight="0.1"/>
+        		<EditText
+        			android:id="@+id/ChargeField"
+					android:layout_below="@id/rd_tv1"
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+					android:layout_toRightOf="@id/rd_tv2"
+        			android:hint=" $ Cost "
+        			android:numeric="decimal"/>
+       			<TextView
+       				android:id="@+id/rd_tv3"
+       				android:layout_below="@id/rd_tv1"
+       				android:layout_toRightOf="@id/ChargeField"
+					android:text="Estimated Time: "
+					android:paddingLeft="20dip"
+       				android:layout_width="wrap_content"
+       				android:layout_height="wrap_content"
+       				android:layout_weight="0.1"/>
+       			<EditText
+        			android:id="@+id/ETAField"
+        			android:layout_below="@id/rd_tv1"
+        			android:layout_toRightOf="@id/rd_tv3"
+        			android:layout_width="wrap_content"
+        			android:layout_height="wrap_content"
+        			android:hint=" # Min "
+        			android:numeric="integer"/>
+        		<Button
+			    	android:id="@+id/YesButton"
+			    	android:layout_below="@id/rd_tv1"
+			    	android:layout_toRightOf="@id/ETAField"
+			    	android:singleLine="false"
+					android:layout_centerVertical="true"
+					android:layout_centerHorizontal="true"
+		       		android:text="Deliver This Order"
+		       		android:textSize="20dip"
+		       		android:enabled="false"
+		       		android:layout_width="wrap_content"
+		       		android:layout_height="wrap_content"/>
+		</RelativeLayout>
+		
+</LinearLayout>

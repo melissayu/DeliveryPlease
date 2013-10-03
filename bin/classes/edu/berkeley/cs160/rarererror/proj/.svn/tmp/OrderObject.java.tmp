@@ -1,0 +1,95 @@
+package edu.berkeley.cs160.rarererror.proj;
+
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+
+<<<<<<< .mine
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class OrderObject implements Parcelable {
+=======
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class OrderObject implements Parcelable{
+>>>>>>> .r13
+	public ArrayList<MenuItem> orderList;
+	public double subtotalPrice;
+	public double taxPrice;
+	public double totalPrice;
+	
+	public String[] orderListStringArray;
+	public String subtotalPriceText;
+	public String taxPriceText;
+	public String totalPriceText;
+
+	
+	public OrderObject(){
+		orderList = new ArrayList<MenuItem>();
+		subtotalPrice = 0;
+		taxPrice = 0;
+		totalPrice = 0;
+	}
+	
+	public void updatePrice(){
+		taxPrice = subtotalPrice*0.09;
+		totalPrice = subtotalPrice + taxPrice;
+		formatNumberStrings();
+		
+		orderListStringArray = new String[orderList.size()];
+		for (int i = 0; i < orderList.size(); i++){
+			orderListStringArray[i] = orderList.get(i).itemName;
+		}
+	}
+	
+	public void formatNumberStrings(){
+        NumberFormat numberFormat = DecimalFormat.getInstance();
+        numberFormat.setMaximumFractionDigits(2);
+        subtotalPriceText = numberFormat.format(subtotalPrice);
+        taxPriceText = numberFormat.format(taxPrice);
+        totalPriceText = numberFormat.format(totalPrice);
+
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public int describeContents() {
+        return 0;
+    }
+
+	public void writeToParcel(Parcel out, int flags) {
+		out.writeStringArray(orderListStringArray);
+        out.writeString(subtotalPriceText);
+        out.writeString(taxPriceText);
+        out.writeString(totalPriceText);
+    }
+	
+	public static final Parcelable.Creator<OrderObject> CREATOR = new Parcelable.Creator<OrderObject>() {
+        public OrderObject createFromParcel(Parcel in) {
+            return new OrderObject(in);
+        }
+
+        public OrderObject[] newArray(int size) {
+            return new OrderObject[size];
+        }
+    };
+    
+    private OrderObject(Parcel in) {
+    	orderListStringArray = in.createStringArray();
+    	subtotalPriceText = in.readString();
+    	taxPriceText = in.readString();
+    	totalPriceText = in.readString();
+    }
+}

@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/cs160/!svn/ver/67/DeliveryPlease/res/layout
+END
+orderpending.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/orderpending.xml
+END
+register.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/register.xml
+END
+main.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/main.xml
+END
+orderuserlistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/cs160/!svn/ver/67/DeliveryPlease/res/layout/orderuserlistitem.xml
+END
+locationsummary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/cs160/!svn/ver/44/DeliveryPlease/res/layout/locationsummary.xml
+END
+currentorderlistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/cs160/!svn/ver/47/DeliveryPlease/res/layout/currentorderlistitem.xml
+END
+ordersummary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/ordersummary.xml
+END
+rateuser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/cs160/!svn/ver/57/DeliveryPlease/res/layout/rateuser.xml
+END
+checkinrow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/cs160/!svn/ver/2/DeliveryPlease/res/layout/checkinrow.xml
+END
+deliveryuserlistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/cs160/!svn/ver/66/DeliveryPlease/res/layout/deliveryuserlistitem.xml
+END
+requestdetails.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/requestdetails.xml
+END
+pickrestaurant.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/cs160/!svn/ver/43/DeliveryPlease/res/layout/pickrestaurant.xml
+END
+checkinlist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/cs160/!svn/ver/43/DeliveryPlease/res/layout/checkinlist.xml
+END
+deliverysummary.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/cs160/!svn/ver/44/DeliveryPlease/res/layout/deliverysummary.xml
+END
+checkinmap.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/cs160/!svn/ver/2/DeliveryPlease/res/layout/checkinmap.xml
+END
+menu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/menu.xml
+END
+enterlocation.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/cs160/!svn/ver/66/DeliveryPlease/res/layout/enterlocation.xml
+END
+offerpending.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/offerpending.xml
+END
+customorder.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/customorder.xml
+END
+orderrequests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/cs160/!svn/ver/43/DeliveryPlease/res/layout/orderrequests.xml
+END
+login.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/cs160/!svn/ver/63/DeliveryPlease/res/layout/login.xml
+END
+availablerequests.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/cs160/!svn/ver/44/DeliveryPlease/res/layout/availablerequests.xml
+END
+menulistitem.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/cs160/!svn/ver/43/DeliveryPlease/res/layout/menulistitem.xml
+END
